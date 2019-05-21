@@ -1,0 +1,15 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+.myheader{
+	height: auto;
+	width: 100vw;
+}
+
+.wrapper
+{
+	width: 100%;
+	height: 252px;
+}
