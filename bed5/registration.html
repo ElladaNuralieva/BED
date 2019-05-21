@@ -5,13 +5,79 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div class="myheader">
-		<section class="logo">
-			<span> Туристическая фирма "Выборгская"</span>
-		</section>
-		<section class="wrapper">
-			<img src="https://cdn.sozvezdie-tour.ru/images/uploadedfiles/3f3164c3-1942-4b6d-af79-b3966a596992.jpg">
-		</section>
+	<div class="main">
+		<div class="main_wrapper">
+			<section class="header">
+				<section class="logo">
+					<span> Туристическая фирма "Выборгская"</span>
+					<h2>Оформить заказ</h2>
+				</section>
+			</section>
+			<section class="what">
+				<div class="where">
+					<label for="where_select">Маршрут тура</label>
+					<select id="where_select">
+						<option>Экскурсия по Карелии «Мраморный каньон, Рускеальские водопады»</option>
+						<option>Спб-Москва-Спб</option>
+						<option>Общага-Универ-Карусель-Общага</option>
+						<option>Дом-Работа-Дом</option>
+					</select>
+				</div>
+				<div class="when">
+					<label for="when__start">Дата начала</label>
+					<select id="when__start">
+						<option>Завтра</option>
+						<option>Через неделю</option>
+						<option>Никогда</option>
+					</select>
+					<label for="when__end">Дата окончания</label>
+					<select id="when__end">
+						<option>Завтра</option>
+						<option>Через неделю</option>
+						<option>Никогда</option>
+					</select>
+				</div>
+				
+				
+			</section>
+			<section class="about">
+				<h3>Описание</h3>
+				<div class="about__where">
+					<p> г. Приозерск — холм Яккимваара и Лютеранская Кирха — г. Лахденпохья и дегустация — г. Сортавала — фьорд Кирьявалахти и Дом композиторов на Ладожском озере — горный парк «Рускеала» и Мараморный каньон — обед — водопад «Ахвенкоски»</p>
+				</div>
+				<div class="about__howmuch">
+					<h3>Цена</h3>
+					<p>100 бабла</p>
+				</div>
+			</section>
+			<section class="people">
+				<!-- <div class="people__add"> -->
+					<table class="addtable">  
+                        <tr>  
+                            <td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list" /></td>  
+                            <td><button type="button" name="add" id="add" class="btn btn-success">Добавить ещё туриста</button></td>  
+                        </tr>  
+                    </table> 
+				<!-- </div> -->
+				
+			</section>
+			<section class="total">
+				<h3> Итого</h3>
+				<div class="price">
+					
+					<p>Дофига рублей</p>
+					<p>Скидка</p>
+				</div>
+				<div class="ok">
+					<button type="button" name="ok" class="btn btn-success">Подтвердить заказ</button>
+				</div>
+				
+				
+			</section>
+		</div>
+		
+		
+		
 		
 	</div>
 </body>
