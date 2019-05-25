@@ -1,6 +1,11 @@
+<?php
+    require_once 'include/connection.php';
+    require_once 'include/functions.php';
+?>
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+    <meta charset="utf-8">
 	<title>registration</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -17,10 +22,10 @@
 				<div class="where">
 					<div class="where_select">
 						<select >
-							<option>Экскурсия по Карелии «Мраморный каньон, Рускеальские водопады»</option>
-							<option>Спб-Москва-Спб</option>
-							<option>Общага-Универ-Карусель-Общага</option>
-							<option>Дом-Работа-Дом(ая)</option>
+						    <?php $routes=getRoutes($link); ?>
+                            <?php foreach($routes as $route): ?>
+                            <option> <?=$route["RouteName"]?></option>
+                            <?php endforeach; ?>
 						</select>
 						
 						
@@ -29,9 +34,10 @@
 				
 					<div id="when__start">
 						<select>
-							<option>Завтра</option>
-							<option>Через неделю</option>
-							<option>Никогда</option>
+                            <?php $dates=getDates($link, 1); ?>
+                            <?php foreach($dates as $date): ?>
+                            <option> <?=$date["Date"]?></option>
+                            <?php endforeach; ?>
 						</select>
 							
 						
@@ -51,7 +57,7 @@
 					<div class="about">
 						<h3>Описание</h3>
 						<div class="about__where">
-							<p> г. Приозерск — холм Яккимваара и Лютеранская Кирха — г. Лахденпохья и дегустация — г. Сортавала — фьорд Кирьявалахти и Дом композиторов на Ладожском озере — горный парк «Рускеала» и Мараморный каньон — обед — водопад «Ахвенкоски»</p>
+
 						</div>
 						
 					</div>
