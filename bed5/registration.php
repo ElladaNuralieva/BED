@@ -9,6 +9,7 @@
 	<title>registration</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="http://malsup.github.com/jquery.form.js"></script>
 	<script src="loading.js"></script>
 </head>
 <body>
@@ -56,36 +57,38 @@
 			</section>
 			
 			<section class="client">
-				<form  class=" client__form" action="addTourist.php" method="post">
+				<form  id="myForm" class=" client__form" action="addTourist.php" method="post">
 					<div class="addclient"> 
 						<div class="name">
-                            <input type="text" name="name[]" placeholder="Имя" class="client_info" />
-                            <input type="text" name="lastname[]" placeholder="Фамилия" class="client_info" />
-                            <input type="text" name="middlename[]" placeholder="Отчество" class="client_info" />
+                            <input type="text" name="name" placeholder="Имя" class="client_info" />
+                            <input type="text" name="lastname" placeholder="Фамилия" class="client_info" />
+                            <input type="text" name="middlename" placeholder="Отчество" class="client_info" />
                             <label>Дата рождения</label>
-                            <input type="date" name="bdate[]" placeholder="Дата рождения" class="client_info" />
+                            <input type="date" name="bdate" placeholder="Дата рождения" class="client_info" />
                             <label>Телефон</label>
                             <input name="tel" type="tel" pattern="^\+7\d{3}\d{7}$" value="+7" maxlength="12">
                         </div>
                             	
                         <div class="passtel">
-                            <input type="text" name="passport[]" placeholder="Документ, удостоверяющий личность" class="client_info" />
-                            <input type="text" name="passport[]" placeholder="Серия" class="client_info" pattern="[0-9]{10}" />
-                            <input type="text" name="passport[]" placeholder="Номер" class="client_info" pattern="[0-9]{10}" />
-                            <input type="text" name="passport[]" placeholder="Кем выдан" class="client_info" />
+                            <input type="text" name="docType" placeholder="Документ, удостоверяющий личность" class="client_info" />
+                            <input type="text" name="seria" placeholder="Серия" class="client_info" pattern="[0-9]{4}" />
+                            <input type="text" name="number" placeholder="Номер" class="client_info" pattern="[0-9]{6}" />
+                            <input type="text" name="given" placeholder="Кем выдан" class="client_info" />
                             <label>Дата выдачи</label>
-                            <input type="date" name="bdate[]" placeholder="Дата выдачи" class="client_info" />
+                            <input type="date" name="giveDate" placeholder="Дата выдачи" class="client_info" />
                              <label>Наличие заграничного паспорта</label>
-                             <input type="checkbox" name="passport[]"  class="client_info" />
+                             <input type="checkbox" name="hasPass"  class="client_info" />
 
                         </div>  
-                            
+
 
                         <div class="but">
+                            <input type="submit" value="Подтвердить данного туриста">
                            	<button type="button" name="add" class=" btn_add client_info">Добавить туриста</button>
                             <button type="button" name="remove" id="remove" class="btn_remove client_info">Удалить туриста
                             </button>
-                        </div>  
+                        </div>
+
                     </div>
 				</form>
 			</section>
@@ -108,3 +111,4 @@
 
 </body>
 </html>
+
