@@ -12,7 +12,10 @@ $(document).ready(function(){
             console.log( "rsseady!" );
             $('#dataSelect').html(data.ms);
             $('#comment').html(data.comm);
-            console.log( data.comm );
+            $('#when__end').html(data.period);
+            $('#price').html(data.price);
+            $('#worker').html(data.worker);
+            console.log( data.period );
         },
         error:function(xhr, status, error)
         {

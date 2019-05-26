@@ -37,8 +37,7 @@
    						</select>
 					</div>
 					<div id="when__end">
-						<option disabled></option>
-						
+
 					</div>
 					<div class="about">
 						<h3>Описание</h3>
@@ -47,11 +46,14 @@
 						</div>
 						
 					</div>
-					<div class="about__howmuch">
+					<div id="price" class="about__howmuch">
 						<h3>Цена</h3>
-						<p>100 бабла</p>
+
 					</div>	
-				
+				    <div id="worker" class="about__howmuch">
+                    <h3>Представитель на маршруте</h3>
+
+                    </div>
 			</section>
 			
 			<section class="client">
