@@ -77,8 +77,7 @@
                             <label>Дата выдачи</label>
                             <input type="date" name="giveDate" placeholder="Дата выдачи" class="client_info" />
                              <label>Наличие заграничного паспорта</label>
-                             <input type="checkbox" name="hasPass"  class="client_info" />
-
+                            <input type="checkbox" name="hasPass"  class="client_info" />
                         </div>  
 
 
@@ -111,4 +110,12 @@
 
 </body>
 </html>
-
+<script>
+        // wait for the DOM to be loaded
+        $(document).ready(function() {
+            // bind 'myForm' and provide a simple callback function
+            $('#myForm').ajaxForm(function() {
+                alert("Подтверждено!");
+            });
+        });
+    </script>
