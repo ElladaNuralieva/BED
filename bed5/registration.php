@@ -42,8 +42,7 @@
 					<div class="about">
 						<h3>Описание</h3>
 						<div id="comment" class="about__where">
-                            Описание тура
-						</div>
+   						</div>
 						
 					</div>
 					<div id="price" class="about__howmuch">
@@ -57,20 +56,28 @@
 			</section>
 			
 			<section class="client">
-				<form  class=" client__form" action="" method="post">
+				<form  class=" client__form" action="addTourist.php" method="post">
 					<div class="addclient"> 
 						<div class="name">
                             <input type="text" name="name[]" placeholder="Имя" class="client_info" />
                             <input type="text" name="lastname[]" placeholder="Фамилия" class="client_info" />
                             <input type="text" name="middlename[]" placeholder="Отчество" class="client_info" />
-                        </div>
-                            	
-                        <div class="passtel">
-                            <input type="text" name="passport[]" placeholder="Паспортные данные" class="client_info" pattern="[0-9]{10}" />
                             <label>Дата рождения</label>
                             <input type="date" name="bdate[]" placeholder="Дата рождения" class="client_info" />
                             <label>Телефон</label>
                             <input name="tel" type="tel" pattern="^\+7\d{3}\d{7}$" value="+7" maxlength="12">
+                        </div>
+                            	
+                        <div class="passtel">
+                            <input type="text" name="passport[]" placeholder="Документ, удостоверяющий личность" class="client_info" />
+                            <input type="text" name="passport[]" placeholder="Серия" class="client_info" pattern="[0-9]{10}" />
+                            <input type="text" name="passport[]" placeholder="Номер" class="client_info" pattern="[0-9]{10}" />
+                            <input type="text" name="passport[]" placeholder="Кем выдан" class="client_info" />
+                            <label>Дата выдачи</label>
+                            <input type="date" name="bdate[]" placeholder="Дата выдачи" class="client_info" />
+                             <label>Наличие заграничного паспорта</label>
+                             <input type="checkbox" name="passport[]"  class="client_info" />
+
                         </div>  
                             
 

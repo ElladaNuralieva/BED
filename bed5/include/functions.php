@@ -14,7 +14,6 @@ function getRoutes($link){
 function getDates($link, $RouteId){
     $sql= "SELECT Date FROM Trips where `Route ID`=1";
     $result = mysqli_query($link, $sql);
-
     $dates = mysqli_fetch_all($result, 1);
     return $dates;
 }
