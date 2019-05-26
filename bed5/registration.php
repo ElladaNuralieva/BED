@@ -8,6 +8,8 @@
     <meta charset="utf-8">
 	<title>registration</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="loading.js"></script>
 </head>
 <body>
 	<div class="main">
@@ -21,43 +23,27 @@
 			<section class="what">
 				<div class="where">
 					<div class="where_select">
-						<select >
-						    <?php $routes=getRoutes($link); ?>
-                            <?php foreach($routes as $route): ?>
-                            <option> <?=$route["RouteName"]?></option>
-                            <?php endforeach; ?>
+						<select name="selectRoute" id="selectRoute">
+						    <option value=''>Выберите маршрут:</option>
+						    <?php echo getRoutes($link); ?>
 						</select>
-						
 						
 					</div>
 				</div>
 				
 					<div id="when__start">
-						<select>
-                            <?php $dates=getDates($link, 1); ?>
-                            <?php foreach($dates as $date): ?>
-                            <option> <?=$date["Date"]?></option>
-                            <?php endforeach; ?>
-						</select>
-							
-						
-						
-						
+						<select  id="dataSelect" name="dataSelect">
+                            <option disabled>Выберите дату:</option>
+   						</select>
 					</div>
-					
 					<div id="when__end">
-						<select>
-							<option>Завтра</option>
-							<option>Через неделю</option>
-							<option>Никогда</option>
-						
-						</select>
+						<option disabled></option>
 						
 					</div>
 					<div class="about">
 						<h3>Описание</h3>
-						<div class="about__where">
-
+						<div id="comment" class="about__where">
+                            Описание тура
 						</div>
 						
 					</div>
@@ -107,8 +93,9 @@
 			</section>
 		</div>
 	</div>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
 	
 	<script src="script.js" type="text/javascript"></script>
+
 </body>
 </html>
