@@ -8,6 +8,8 @@
     <meta charset="utf-8">
 	<title>registration</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="loading.js"></script>
 </head>
 <body>
 	<div class="main">
@@ -21,68 +23,61 @@
 			<section class="what">
 				<div class="where">
 					<div class="where_select">
-						<select >
-						    <?php $routes=getRoutes($link); ?>
-                            <?php foreach($routes as $route): ?>
-                            <option> <?=$route["RouteName"]?></option>
-                            <?php endforeach; ?>
+						<select name="selectRoute" id="selectRoute">
+						    <option value=''>Выберите маршрут:</option>
+						    <?php echo getRoutes($link); ?>
 						</select>
-						
 						
 					</div>
 				</div>
 				
 					<div id="when__start">
-						<select>
-                            <?php $dates=getDates($link, 1); ?>
-                            <?php foreach($dates as $date): ?>
-                            <option> <?=$date["Date"]?></option>
-                            <?php endforeach; ?>
-						</select>
-							
-						
-						
-						
+						<select  id="dataSelect" name="dataSelect">
+                            <option disabled>Выберите дату:</option>
+   						</select>
 					</div>
-					
 					<div id="when__end">
-						<select>
-							<option>Завтра</option>
-							<option>Через неделю</option>
-							<option>Никогда</option>
-						
-						</select>
-						
+
 					</div>
 					<div class="about">
 						<h3>Описание</h3>
-						<div class="about__where">
-
-						</div>
+						<div id="comment" class="about__where">
+   						</div>
 						
 					</div>
-					<div class="about__howmuch">
+					<div id="price" class="about__howmuch">
 						<h3>Цена</h3>
-						<p>100 бабла</p>
+
 					</div>	
-				
+				    <div id="worker" class="about__howmuch">
+                    <h3>Представитель на маршруте</h3>
+
+                    </div>
 			</section>
 			
 			<section class="client">
-				<form  class=" client__form" action="" method="post">
+				<form  class=" client__form" action="addTourist.php" method="post">
 					<div class="addclient"> 
 						<div class="name">
                             <input type="text" name="name[]" placeholder="Имя" class="client_info" />
                             <input type="text" name="lastname[]" placeholder="Фамилия" class="client_info" />
                             <input type="text" name="middlename[]" placeholder="Отчество" class="client_info" />
-                        </div>
-                            	
-                        <div class="passtel">
-                            <input type="text" name="passport[]" placeholder="Паспортные данные" class="client_info" pattern="[0-9]{10}" />
                             <label>Дата рождения</label>
                             <input type="date" name="bdate[]" placeholder="Дата рождения" class="client_info" />
                             <label>Телефон</label>
                             <input name="tel" type="tel" pattern="^\+7\d{3}\d{7}$" value="+7" maxlength="12">
+                        </div>
+                            	
+                        <div class="passtel">
+                            <input type="text" name="passport[]" placeholder="Документ, удостоверяющий личность" class="client_info" />
+                            <input type="text" name="passport[]" placeholder="Серия" class="client_info" pattern="[0-9]{10}" />
+                            <input type="text" name="passport[]" placeholder="Номер" class="client_info" pattern="[0-9]{10}" />
+                            <input type="text" name="passport[]" placeholder="Кем выдан" class="client_info" />
+                            <label>Дата выдачи</label>
+                            <input type="date" name="bdate[]" placeholder="Дата выдачи" class="client_info" />
+                             <label>Наличие заграничного паспорта</label>
+                             <input type="checkbox" name="passport[]"  class="client_info" />
+
                         </div>  
                             
 
@@ -107,8 +102,9 @@
 			</section>
 		</div>
 	</div>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
 	
 	<script src="script.js" type="text/javascript"></script>
+
 </body>
 </html>
