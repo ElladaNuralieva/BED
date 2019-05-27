@@ -50,9 +50,17 @@ select
 	grid-template-rows: repeat(3, 1fr);
 	padding:10px;
 }
+.client_info
+{
+	margin: 1px;
+}
 .but
 {
 	display: grid;
-	grid-template-rows: repeat(2, 2fr);
+	grid-template-rows: repeat(3, 1fr);
 	padding:10px;
+}
+input
+{
+	min-height: 23px;
 }
