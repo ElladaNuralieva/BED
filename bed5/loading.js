@@ -12,16 +12,15 @@ $(document).ready(function(){
             console.log( "rsseady!" );
             $('#dataSelect').html(data.ms);
             $('#comment').html(data.comm);
-            $('#when__end').html(data.period);
-            $('#price').html(data.price);
-            $('#worker').html(data.worker);
-            console.log( data.period );
+            console.log( data.comm );
+            document.querySelector('.recieve').style.background = 'rgba(255, 248, 220,0.6)';
         },
         error:function(xhr, status, error)
         {
             console.log( xhr );
         }
         });
+
 
     });
   });

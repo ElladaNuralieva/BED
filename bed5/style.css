@@ -1,8 +1,16 @@
 *{
 	margin:0;
 	padding: 0;
+	font-family: 'Comfortaa', cursive;
 }
-
+h2, span
+{
+	text-shadow: 5px 2px  5px rgba(0,0,0,0.7);
+}
+span
+{
+	font-weight: bold ;
+}
 .main{
 	background: url(https://cdn.sozvezdie-tour.ru/images/uploadedfiles/3f3164c3-1942-4b6d-af79-b3966a596992.jpg) no-repeat;
 	background-position: center center;
@@ -22,7 +30,7 @@
 {
 	
 	display: grid;
-	grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+	/*grid-template-rows: 2fr 1fr 1fr 1fr 1fr;*/
 	/*grid-template-columns: repeat(1,1fr);*/
 	
 	/*width: 100%; */
@@ -30,6 +38,7 @@
 	background: rgb(202, 249, 246,0.5);
 	max-width:1500px;
 	max-height: 2000px;
+	text-align: center;
 	/*height: auto;*/
 	
 	
@@ -52,44 +61,11 @@
 
 }
 
-.what, .about, .header, .client, .total
-{
-	display: grid;
-	text-align: center;
-	justify-content: center;
-	align-items: center;
 
-}
-.what
-{
-	grid-template-columns: repeat(3,3fr);
-	grid-template-rows: repeat(2,1fr);
-	padding: 10px;
-}
-.where_select
-{
-	
-	padding-left: 100px;
-	
-}
-.addclient
-{
-	grid-template-columns: repeat(3,3fr);
-	/*grid-template-columns: repeat(8,1fr);*/
-	display: grid;
-	border: silver solid;
-	margin-bottom: 10px;
-}
-.name, .passtel
-{
-	display: grid;
-	grid-template-rows: repeat(3, 1fr);
-	padding:10px;
-}
 
 
 	
-input, .ok button {
+input,  button {
 	width: 400px;
 	font-size: 13px;
 	padding: 6px 0 4px 10px;
@@ -97,13 +73,8 @@ input, .ok button {
 	background: #F6F6f6;
 	border-radius: 8px;
 }
-.but
-{
-	display: grid;
-	grid-template-rows: repeat(2, 2fr);
-	padding:10px;
-}
-.but button , .ok button
+
+ button , button
 {
 	border-radius: 30px;
 	margin: 5px;

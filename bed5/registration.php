@@ -8,8 +8,9 @@
     <meta charset="utf-8">
 	<title>registration</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="registration.css">
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="http://malsup.github.com/jquery.form.js"></script>
 	<script src="loading.js"></script>
 </head>
 <body>
@@ -22,72 +23,66 @@
 				</section>
 			</section>
 			<section class="what">
-				<div class="where">
-					<div class="where_select">
-						<select name="selectRoute" id="selectRoute">
-						    <option value=''>Выберите маршрут:</option>
-						    <?php echo getRoutes($link); ?>
-						</select>
-						
+				<div class='select'>
+					<div class="where">
+						<div class="where_select">
+							<select name="selectRoute" id="selectRoute">
+							    <option value=''>Выберите маршрут:</option>
+							    <?php echo getRoutes($link); ?>
+							</select>
+							
+						</div>
 					</div>
-				</div>
 				
 					<div id="when__start">
 						<select  id="dataSelect" name="dataSelect">
-                            <option disabled>Выберите дату:</option>
+                            <option value=''>Выберите дату:</option>
    						</select>
 					</div>
-					<div id="when__end">
-
+				</div>
+				
+					<div class="recieve">
+						<div class="period rec_el">
+							<h3>Длительность</h3>
+							<p> 2дня</p>
+						</div>
+						<div class="about rec_el">
+							<h3>Описание</h3>
+							<div id="comment" class="abo	ut__where"></div>
+						</div>
+						<div class="about__howmuch rec_el">
+							<h3>Цена</h3>
+							<p>100 бабла</p>
+						</div>	
 					</div>
-					<div class="about">
-						<h3>Описание</h3>
-						<div id="comment" class="about__where">
-   						</div>
-						
-					</div>
-					<div id="price" class="about__howmuch">
-						<h3>Цена</h3>
-
-					</div>	
-				    <div id="worker" class="about__howmuch">
-                    <h3>Представитель на маршруте</h3>
-
-                    </div>
+					
+					
+				
 			</section>
 			
 			<section class="client">
-				<form  id="myForm" class=" client__form" action="addTourist.php" method="post">
+				<form  class=" client__form" action="" method="post">
 					<div class="addclient"> 
 						<div class="name">
-                            <input type="text" name="name" placeholder="Имя" class="client_info" />
-                            <input type="text" name="lastname" placeholder="Фамилия" class="client_info" />
-                            <input type="text" name="middlename" placeholder="Отчество" class="client_info" />
-                            <label>Дата рождения</label>
-                            <input type="date" name="bdate" placeholder="Дата рождения" class="client_info" />
-                            <label>Телефон</label>
-                            <input name="tel" type="tel" pattern="^\+7\d{3}\d{7}$" value="+7" maxlength="12">
+                            <input type="text" name="name[]" placeholder="Имя" class="client_info" />
+                            <input type="text" name="lastname[]" placeholder="Фамилия" class="client_info" />
+                            <input type="text" name="middlename[]" placeholder="Отчество" class="client_info" />
                         </div>
                             	
                         <div class="passtel">
-                            <input type="text" name="docType" placeholder="Документ, удостоверяющий личность" class="client_info" />
-                            <input type="text" name="seria" placeholder="Серия" class="client_info" pattern="[0-9]{4}" />
-                            <input type="text" name="number" placeholder="Номер" class="client_info" pattern="[0-9]{6}" />
-                            <input type="text" name="given" placeholder="Кем выдан" class="client_info" />
-                            <label>Дата выдачи</label>
-                            <input type="date" name="giveDate" placeholder="Дата выдачи" class="client_info" />
-                             <label>Наличие заграничного паспорта</label>
-                            <input type="checkbox" name="hasPass"  class="client_info" />
+                            <input type="text" name="passport[]" placeholder="Паспортные данные" class="client_info" pattern="[0-9]{10}" />
+                            <label>Дата рождения</label>
+                            <input type="date" name="bdate[]" placeholder="Дата рождения" class="client_info" />
+                            <label>Телефон</label>
+                            <input name="tel" type="tel" pattern="^\+7\d{3}\d{7}$" value="+7" maxlength="12">
                         </div>  
-
+                            
 
                         <div class="but">
-                            <input type="submit" value="Подтвердить данного туриста">
                            	<button type="button" name="add" class=" btn_add client_info">Добавить туриста</button>
                             <button type="button" name="remove" id="remove" class="btn_remove client_info">Удалить туриста
                             </button>
-                        </div>
-
+                        </div>  
                     </div>
 				</form>
 			</section>
@@ -99,7 +94,7 @@
 					<p>Скидка</p>
 				</div>
 				<div class="ok">
-					<button type="button" name="ok" class="btn btn-success">Подтвердить заказ</button>
+					<button name="ok" class="btn btn-success">Подтвердить заказ</button>
 				</div>
 			</section>
 		</div>
@@ -110,12 +105,3 @@
 
 </body>
 </html>
-<script>
-        // wait for the DOM to be loaded
-        $(document).ready(function() {
-            // bind 'myForm' and provide a simple callback function
-            $('#myForm').ajaxForm(function() {
-                alert("Подтверждено!");
-            });
-        });
-    </script>
