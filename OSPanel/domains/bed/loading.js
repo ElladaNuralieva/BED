@@ -12,6 +12,10 @@ $(document).ready(function(){
             console.log( "rsseady!" );
             $('#dataSelect').html(data.ms);
             $('#comment').html(data.comm);
+            $('#period').html(data.period);
+            $('#price').html(data.price);
+            $('#worker').html(data.worker);
+            console.log( data.worker );
             console.log( data.comm );
             document.querySelector('.recieve').style.background = 'rgba(255, 248, 220,0.6)';
         },

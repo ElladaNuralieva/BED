@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="registration.css">
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="http://malsup.github.com/jquery.form.js"></script>
 	<script src="loading.js"></script>
 </head>
 <body>
@@ -42,43 +43,54 @@
 				</div>
 				
 					<div class="recieve">
-						<div class="period rec_el">
-							<h3>Длительность</h3>
-							<p> 2дня</p>
+						<div style="display: grid;">
+							<div  id='period' class="about__howlong rec_el">
+								<h3>Длительность</h3>
+							</div>
+							<div id="price" class="about__howmuch rec_el" style="padding-top: 5px;">
+								<h3>Цена</h3>
+							</div>
 						</div>
+
 						<div class="about rec_el">
 							<h3>Описание</h3>
 							<div id="comment" class="abo	ut__where"></div>
 						</div>
-						<div class="about__howmuch rec_el">
-							<h3>Цена</h3>
-							<p>100 бабла</p>
-						</div>	
+							
+						<div id="worker" class="about__worker">
+                    		<h3>Представитель на маршруте</h3>
+                    	</div>
 					</div>
 					
-					
-				
 			</section>
 			
 			<section class="client">
-				<form  class=" client__form" action="" method="post">
+				<form  id="myForm" class=" client__form" action="addTourist.php" method="post">
 					<div class="addclient"> 
 						<div class="name">
-                            <input type="text" name="name[]" placeholder="Имя" class="client_info" />
-                            <input type="text" name="lastname[]" placeholder="Фамилия" class="client_info" />
-                            <input type="text" name="middlename[]" placeholder="Отчество" class="client_info" />
+                            <input type="text" name="name" placeholder="Имя" class="client_info" />
+                            <input type="text" name="lastname" placeholder="Фамилия" class="client_info" />
+                            <input type="text" name="middlename" placeholder="Отчество" class="client_info" />
+                            <label>Дата рождения</label>
+                            <input type="date" name="bdate" placeholder="Дата рождения" class="client_info" />
+                            <label>Телефон</label>
+                            <input name="tel" type="tel" pattern="^\+7\d{3}\d{7}$" value="+7" maxlength="12">
                         </div>
                             	
                         <div class="passtel">
-                            <input type="text" name="passport[]" placeholder="Паспортные данные" class="client_info" pattern="[0-9]{10}" />
-                            <label>Дата рождения</label>
-                            <input type="date" name="bdate[]" placeholder="Дата рождения" class="client_info" />
-                            <label>Телефон</label>
-                            <input name="tel" type="tel" pattern="^\+7\d{3}\d{7}$" value="+7" maxlength="12">
+                            <input type="text" name="docType" placeholder="Документ, удостоверяющий личность" class="client_info" />
+                            <input type="text" name="seria" placeholder="Серия" class="client_info" pattern="[0-9]{4}" />
+                            <input type="text" name="number" placeholder="Номер" class="client_info" pattern="[0-9]{6}" />
+                            <input type="text" name="given" placeholder="Кем выдан" class="client_info" />
+                            <label>Дата выдачи</label>
+                            <input type="date" name="giveDate" placeholder="Дата выдачи" class="client_info" />
+                             <label>Наличие заграничного паспорта</label>
+                            <input type="checkbox" name="hasPass"  class="client_info" />
                         </div>  
                             
 
                         <div class="but">
+                           	<input id="submitbut" type="submit" value="Подтвердить данного туриста">
                            	<button type="button" name="add" class=" btn_add client_info">Добавить туриста</button>
                             <button type="button" name="remove" id="remove" class="btn_remove client_info">Удалить туриста
                             </button>
@@ -102,6 +114,14 @@
 
 	
 	<script src="script.js" type="text/javascript"></script>
-
+	<script>
+        // wait for the DOM to be loaded
+        $(document).ready(function() {
+            // bind 'myForm' and provide a simple callback function
+            $('#myForm').ajaxForm(function() {
+                alert("Подтверждено!");
+            });
+        });
+    </script>
 </body>
 </html>
