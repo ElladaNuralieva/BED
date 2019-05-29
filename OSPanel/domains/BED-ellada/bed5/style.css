@@ -66,7 +66,6 @@ span
 
 	
 input,  button {
-	max-height: 60px;
 	width: 400px;
 	font-size: 13px;
 	padding: 6px 0 4px 10px;
@@ -75,7 +74,7 @@ input,  button {
 	border-radius: 8px;
 }
 
- button ,  #submitbut 
+ button , button
 {
 	border-radius: 30px;
 	margin: 5px;
