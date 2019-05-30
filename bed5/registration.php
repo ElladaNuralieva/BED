@@ -12,12 +12,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="http://malsup.github.com/jquery.form.js"></script>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.0-beta.1/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.1.135/jspdf.min.js"></script>
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.1.135/jspdf.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js
-    "></script>
+    "></script> -->
 
 	<script src="loading.js"></script>
 	<script src="pdf.js"></script>
@@ -73,7 +70,7 @@
 			</section>
 
 			<section class="client" id="sec">
-				<form  id="myForm" class=" client__form" action="addTourist.php" method="post">
+				<form  id="myForm1" class=" client__form" action="addTourist.php" method="post">
 					<div class="addclient">
 						<div class="name">
                             <input type="text" name="name[]" placeholder="Имя" class="client_info" />
@@ -114,7 +111,7 @@
 					<p id="total_discount">	</p>
 				</div>
 				<div class="ok">
-					<button name="ok" class="btn btn-success">Подтвердить заказ</button>
+					<button name="ok" class="btn btn-success" onClick="alert('Заказ подтвержден')">Подтвердить заказ</button>
                 	<!-- <button id="pdfBut" name="pdf" class="btn pdf">Просмотреть pdf </button> -->
                 </div>
 			</section>
@@ -124,14 +121,15 @@
 
 
 </body>
+</html>
+
 <script src="script.js" type="text/javascript"></script>
-	<script>
+<script>
         // wait for the DOM to be loaded
         $(document).ready(function() {
             // bind 'myForm' and provide a simple callback function
-            $('#myForm').ajaxForm(function() {
+            $('#myForm1').ajaxForm(function() {
                 alert("Подтверждено!");
             });
         });
-    </script>
-</html>
+</script>
