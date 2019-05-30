@@ -12,12 +12,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="http://malsup.github.com/jquery.form.js"></script>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.0-beta.1/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.1.135/jspdf.min.js"></script>
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.1.135/jspdf.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js
-    "></script>
+    "></script> -->
 
 	<script src="loading.js"></script>
 	<script src="pdf.js"></script>
@@ -39,17 +36,17 @@
 							    <option value=''>Выберите маршрут:</option>
 							    <?php echo getRoutes($link); ?>
 							</select>
-							
+
 						</div>
 					</div>
-				
+
 					<div id="when__start">
 						<select  id="dataSelect" name="dataSelect">
                             <option value=''>Выберите дату:</option>
    						</select>
 					</div>
 				</div>
-				
+
 					<div class="recieve">
 						<div style="display: grid;">
 							<div  id='period' class="about__howlong rec_el">
@@ -64,17 +61,17 @@
 							<h3>Описание</h3>
 							<div id="comment" class="abo	ut__where"></div>
 						</div>
-							
+
 						<div id="worker" class="about__worker">
                     		<h3>Представитель на маршруте</h3>
                     	</div>
 					</div>
-					
+
 			</section>
-			
+
 			<section class="client" id="sec">
-				<form  id="myForm" class=" client__form" action="addTourist.php" method="post">
-					<div class="addclient"> 
+				<form  id="myForm1" class=" client__form" action="addTourist.php" method="post">
+					<div class="addclient">
 						<div class="name">
                             <input type="text" name="name[]" placeholder="Имя" class="client_info" />
                             <input type="text" name="lastname[]" placeholder="Фамилия" class="client_info" />
@@ -84,7 +81,7 @@
                             <label>Телефон</label>
                             <input name="tel" type="tel[]" pattern="^\+7\d{3}\d{7}$" value="+7" maxlength="12">
                         </div>
-                            	
+
                         <div class="passtel">
                             <input type="text" name="docType[]" placeholder="Документ, удостоверяющий личность" class="client_info" />
                             <input type="text" name="seria[]" placeholder="Серия" class="client_info" pattern="[0-9]{4}" />
@@ -94,14 +91,14 @@
                             <input type="date" name="giveDate[]" placeholder="Дата выдачи" class="client_info" />
                              <label>Наличие заграничного паспорта</label>
                             <input type="checkbox" name="hasPass[]"  class="client_info" />
-                        </div>  
-                            
+                        </div>
+
 
                         <div class="but">
                            	<button type="button" name="add" class=" btn_add client_info">Добавить туриста</button>
                             <button type="button" name="remove" id="remove" class="btn_remove client_info">Удалить туриста
                             </button>
-                        </div>  
+                        </div>
                     </div>
                     <input id="submitbut" type="submit" value="Подтвердить  туристов">
 				</form>
@@ -114,24 +111,25 @@
 					<p id="total_discount">	</p>
 				</div>
 				<div class="ok">
-					<button name="ok" class="btn btn-success">Подтвердить заказ</button>
+					<button name="ok" class="btn btn-success" onClick="alert('Заказ подтвержден')">Подтвердить заказ</button>
                 	<!-- <button id="pdfBut" name="pdf" class="btn pdf">Просмотреть pdf </button> -->
                 </div>
 			</section>
 		</div>
 	</div>
 
-	
+
 
 </body>
+</html>
+
 <script src="script.js" type="text/javascript"></script>
-	<script>
+<script>
         // wait for the DOM to be loaded
         $(document).ready(function() {
             // bind 'myForm' and provide a simple callback function
-            $('#myForm').ajaxForm(function() {
+            $('#myForm1').ajaxForm(function() {
                 alert("Подтверждено!");
             });
         });
-    </script>
-</html>
+</script>
