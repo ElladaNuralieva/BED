@@ -5,6 +5,7 @@ if (isset($_POST['name']) and isset($_POST['lastname']) and isset($_POST['middle
 and isset($_POST['docType'])and isset($_POST['seria'])and isset($_POST['number'])and isset($_POST['given'])and isset($_POST['giveDate']))
 {
 echo 'ffff';
+
         $name = ($_POST['name']);
         $lastname = ($_POST['lastname']);
         $middlename = ($_POST['middlename']);
@@ -17,7 +18,10 @@ echo 'ffff';
         $giveData = ($_POST['giveDate']);
         $hasPass = ($_POST['hasPass']);
 
-        if(get_magic_quotes_gpc()==1)
+
+        foreach( $name as $key => $n ){
+
+        /*if(get_magic_quotes_gpc()==1)
         {
          $name = stripslashes(trim($_POST['name']));
          $lastname = stripslashes(trim($_POST['lastname']));
@@ -44,33 +48,27 @@ echo 'ffff';
         $given = trim($_POST['given']);
         $giveData = trim($_POST['giveDate']);
         $hasPass = trim($_POST['hasPass']);
-        }
-        //echo $email;
-         $name = mysqli_real_escape_string($link, $name);
-         $lastname = mysqli_real_escape_string($link, $lastname);
-         $middlename = mysqli_real_escape_string($link, $middlename);
-         $bdate = mysqli_real_escape_string($link, $bdate);
-         $tel = mysqli_real_escape_string($link, $tel);
-         $docType = mysqli_real_escape_string($link, $docType);
-         $seria = mysqli_real_escape_string($link, $seria);
-         $number = mysqli_real_escape_string($link, $number);
-         $given = mysqli_real_escape_string($link, $given);
-         $giveData = mysqli_real_escape_string($link, $giveData);
-         $hasPass = mysqli_real_escape_string($link, $hasPass);
+        }*/
         //echo $email;
 
-        if ($hasPass=='') $hasPass = 0;
-            else $hasPass = 1;
+         $name1 = mysqli_real_escape_string($link, $name[$key]);
+         $lastname1 = mysqli_real_escape_string($link, $lastname[$key]);
+         $middlename1 = mysqli_real_escape_string($link, $middlename[$key]);
+         $bdate1 = mysqli_real_escape_string($link, $bdate[$key]);
+         $tel1 = mysqli_real_escape_string($link, $tel[$key]);
+         $docType1 = mysqli_real_escape_string($link, $docType[$key]);
+         $seria1 = mysqli_real_escape_string($link, $seria[$key]);
+         $number1 = mysqli_real_escape_string($link, $number[$key]);
+         $given1 = mysqli_real_escape_string($link, $given[$key]);
+         $giveData1 = mysqli_real_escape_string($link, $giveData[$key]);
+         $hasPass1 = mysqli_real_escape_string($link, $hasPass[$key]);
+        //echo $email;
+
+        if ($hasPass1=='') $hasPass1 = 0;
+            else $hasPass1 = 1;
        // echo $gender;
-        $addQuery = "INSERT INTO tourists_info (LastName, FirstName, Patronymic, Document, Serial, Number, Date, Region, Born, Pasport) VALUES ('$lastname','$name', '$middlename', '$docType', '$seria', '$number','$giveData','$given','$bdate','$hasPass')";
+        $addQuery = "INSERT INTO tourists_info (LastName, FirstName, Patronymic, Document, Serial, Number, Date, Region, Born, Pasport) VALUES ('$lastname1','$name1', '$middlename1', '$docType1', '$seria1', '$number1','$giveData1','$given1','$bdate1','$hasPass1')";
         $result = mysqli_query($link, $addQuery);
-        if ($result)
-        {
-
-            echo 1;
-        } else
-        {
-             echo 9;
         }
 }
 
