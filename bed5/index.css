@@ -25,3 +25,17 @@ button
 {
 	height: 50px;
 }
+
+.login__fields
+{
+	display: grid;
+	
+	
+
+
+}
+.login_form
+{
+	display: grid;
+	grid-auto-rows: repeat(3,1fr);
+}
